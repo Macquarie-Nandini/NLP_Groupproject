@@ -1,0 +1,569 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://localhost:5000/
+Subject: AI Marketing Content Generator
+Date: Fri, 30 May 2025 18:33:41 +1000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--6FPYxNDyaNzqCGYYJS4SXSCreUIjb7ub95rmmGOTm4----"
+
+
+------MultipartBoundary--6FPYxNDyaNzqCGYYJS4SXSCreUIjb7ub95rmmGOTm4----
+Content-Type: text/html
+Content-ID: <frame-8FD45DDD202731027422ECE63FF7BE48@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://localhost:5000/
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
+css" href=3D"cid:css-ff9a9dde-2b8b-45ca-bc42-b118ce504604@mhtml.blink" /><l=
+ink rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-073fe677-4393-4adc=
+-9809-dca0e233f3b6@mhtml.blink" />
+   =20
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>AI Marketing Content Generator</title>
+   =20
+   =20
+</head>
+<body class=3D"bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen" d=
+ata-new-gr-c-s-check-loaded=3D"14.1237.0" data-gr-ext-installed=3D"" data-n=
+ew-gr-c-s-loaded=3D"14.1237.0">
+    <div class=3D"container mx-auto px-4 py-12">
+        <div class=3D"max-w-4xl mx-auto">
+            <div class=3D"text-center mb-12">
+                <h1 class=3D"text-4xl font-bold text-gray-800 mb-2">AI Mark=
+eting Content Generator</h1>
+                <p class=3D"text-lg text-gray-600">Create professional mark=
+eting materials in seconds</p>
+            </div>
+
+            <div class=3D"bg-white rounded-xl shadow-lg overflow-hidden mar=
+keting-card">
+                <div class=3D"p-8">
+                    <h2 class=3D"text-2xl font-semibold text-gray-800 mb-6"=
+>Business Details</h2>
+                   =20
+                    <div class=3D"space-y-6">
+                        <div>
+                            <label for=3D"company_desc" class=3D"block text=
+-sm font-medium text-gray-700 mb-1">About Your Business</label>
+                            <textarea id=3D"company_desc" rows=3D"4" class=
+=3D"w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:r=
+ing-blue-500 focus:border-blue-500" placeholder=3D"Describe what your compa=
+ny does, its mission, and unique value proposition"></textarea>
+                        </div>
+
+                        <div class=3D"grid grid-cols-1 md:grid-cols-2 gap-6=
+">
+                            <div>
+                                <label for=3D"contact_details" class=3D"blo=
+ck text-sm font-medium text-gray-700 mb-1">Contact Details</label>
+                                <input type=3D"text" id=3D"contact_details"=
+ class=3D"w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 f=
+ocus:ring-blue-500 focus:border-blue-500" placeholder=3D"Company address">
+                            </div>
+                            <div>
+                                <label for=3D"email" class=3D"block text-sm=
+ font-medium text-gray-700 mb-1">Email</label>
+                                <input type=3D"email" id=3D"email" class=3D=
+"w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring=
+-blue-500 focus:border-blue-500" placeholder=3D"contact@company.com">
+                            </div>
+                            <div>
+                                <label for=3D"phone" class=3D"block text-sm=
+ font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type=3D"tel" id=3D"phone" class=3D"w=
+-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-b=
+lue-500 focus:border-blue-500" placeholder=3D"+1 (555) 123-4567">
+                            </div>
+                            <div>
+                                <label for=3D"founder_name" class=3D"block =
+text-sm font-medium text-gray-700 mb-1">Founder/Key Person</label>
+                                <input type=3D"text" id=3D"founder_name" cl=
+ass=3D"w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focu=
+s:ring-blue-500 focus:border-blue-500" placeholder=3D"Name of founder or ke=
+y executive">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for=3D"tone" class=3D"block text-sm font=
+-medium text-gray-700 mb-1">Content Tone</label>
+                            <select id=3D"tone" class=3D"w-full px-4 py-3 b=
+order border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bor=
+der-blue-500">
+                                <option value=3D"professional">Professional=
+</option>
+                                <option value=3D"friendly">Friendly</option=
+>
+                                <option value=3D"casual">Casual</option>
+                                <option value=3D"authoritative">Authoritati=
+ve</option>
+                                <option value=3D"innovative">Innovative</op=
+tion>
+                                <option value=3D"luxury">Luxury</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button id=3D"generate-btn" class=3D"w-full mt-8 bg-blu=
+e-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transit=
+ion duration-300 flex items-center justify-center">
+                        Generate Marketing Content
+                    </button>
+                </div>
+            </div>
+
+            <div id=3D"loading" class=3D"mt-8 text-center hidden">
+                <div class=3D"loader"></div>
+                <p class=3D"mt-3 text-gray-600">Generating your marketing c=
+ontent...</p>
+            </div>
+
+            <div id=3D"error" class=3D"hidden mt-6 p-4 bg-red-100 border-l-=
+4 border-red-500 text-red-700 rounded"></div>
+
+            <div id=3D"results" class=3D"mt-12 space-y-8">
+                <div class=3D"bg-white rounded-xl shadow-lg overflow-hidden=
+ marketing-card">
+                    <div class=3D"p-8">
+                        <h2 class=3D"text-2xl font-semibold text-gray-800 m=
+b-6">Generated Content</h2>
+                       =20
+                        <div class=3D"space-y-6">
+                            <div>
+                                <h3 class=3D"text-lg font-medium text-gray-=
+700 mb-2">Company Name</h3>
+                                <p id=3D"company-name" class=3D"text-gray-8=
+00 text-xl font-semibold">**: NutriFuel</p>
+                            </div>
+                           =20
+                            <div>
+                                <h3 class=3D"text-lg font-medium text-gray-=
+700 mb-2">Description</h3>
+                                <p id=3D"description" class=3D"text-gray-60=
+0">**:
+NutriFuel is a revolutionary health-focused startup dedicated to fueling ac=
+tive lifestyles sustainably. Our mission is to provide high-quality, plant-=
+based, protein-rich nutrition drinks that are organic, vegan, and free from=
+ artificial additives. Launched in 2022, NutriFuel's core offerings include=
+ our flagship product, ProForce, a plant-based protein powder designed to s=
+upport athletes and fitness enthusiasts in their pursuit of optimal health =
+and performance.
+Our unique value proposition lies in our commitment to using only the fines=
+t organic ingredients, sourced from local suppliers whenever possible, and =
+our focus on sustainability throughout every stage of production. As a resu=
+lt, our products not only taste great but also promote a healthier lifestyl=
+e for our customers.
+Our target audience is fitness enthusiasts and athletes who prioritize thei=
+r health and well-being, as well as individuals looking for a more sustaina=
+ble alternative to traditional protein powders. Founded by James Rodriguez,=
+ NutriFuel embodies his vision of making nutrition accessible and enjoyable=
+ for all.</p>
+                            </div>
+                           =20
+                            <div class=3D"grid grid-cols-1 md:grid-cols-2 g=
+ap-6">
+                                <div>
+                                    <h3 class=3D"text-lg font-medium text-g=
+ray-700 mb-2">Industry Type</h3>
+                                    <p id=3D"industry-type" class=3D"text-g=
+ray-600">**: Food and Beverage (Nutrition Drinks)</p>
+                                </div>
+                                <div>
+                                    <h3 class=3D"text-lg font-medium text-g=
+ray-700 mb-2">Tagline</h3>
+                                    <p id=3D"tagline" class=3D"text-gray-60=
+0 italic">**: "Fuel Your Active Lifestyle"</p>
+                                </div>
+                            </div>
+                           =20
+                            <div>
+                                <h3 class=3D"text-lg font-medium text-gray-=
+700 mb-2">Marketing Copy</h3>
+                                <p id=3D"marketing-copy" class=3D"text-gray=
+-600">**:
+Benefits of NutriFuel ProForce:
+* Plant-based, organic, and vegan for a healthier alternative to traditiona=
+l protein powders
+* High in protein (20g per serving) to support muscle growth and recovery
+* Low in calories (120 per serving) and sugar-free to promote a balanced di=
+et
+* Supports sustainable living through local supplier partnerships and eco-f=
+riendly packaging
+Don't sacrifice taste for health - try NutriFuel ProForce today and experie=
+nce the best of both worlds! Contact us at info@nutrifuel.com or +1 (512) 9=
+87-6543 to learn more about our products and join the sustainable nutrition=
+ revolution.</p>
+                            </div>
+                        </div>
+                       =20
+                        <button id=3D"regenerate-btn" class=3D"mt-8 bg-blue=
+-100 hover:bg-blue-200 text-blue-700 font-medium py-2 px-6 rounded-lg trans=
+ition duration-300">
+                            Regenerate Content
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   =20
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root=3D"true"><=
+template shadowmode=3D"open"><div aria-label=3D"grammarly-integration" role=
+=3D"group" tabindex=3D"-1" class=3D"grammarly-desktop-integration" data-con=
+tent=3D"{&quot;mode&quot;:&quot;limited&quot;,&quot;isActive&quot;:false,&q=
+uot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integ=
+ration></html>
+------MultipartBoundary--6FPYxNDyaNzqCGYYJS4SXSCreUIjb7ub95rmmGOTm4----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-073fe677-4393-4adc-9809-dca0e233f3b6@mhtml.blink
+
+@charset "utf-8";
+
+*, ::before, ::after { --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; =
+--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; -=
+-tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: =
+; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-=
+from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ;=
+ --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-s=
+pacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-widt=
+h: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5=
+); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-sh=
+adow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightne=
+ss: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; =
+--tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --=
+tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale=
+: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opaci=
+ty: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ;=
+ --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; }
+
+::backdrop { --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-trans=
+late-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y=
+: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pin=
+ch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-posit=
+ion: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordi=
+nal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; =
+--tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --=
+tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ri=
+ng-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 =
+#0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw=
+-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-satur=
+ate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdro=
+p-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-b=
+ackdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw=
+-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-cont=
+ain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; }
+
+*, ::after, ::before { box-sizing: border-box; border-width: 0px; border-st=
+yle: solid; border-color: rgb(229, 231, 235); }
+
+::after, ::before { --tw-content: ''; }
+
+:host, html { line-height: 1.5; text-size-adjust: 100%; tab-size: 4; font-f=
+amily: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI=
+ Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-feature-settings: norm=
+al; font-variation-settings: normal; -webkit-tap-highlight-color: transpare=
+nt; }
+
+body { margin: 0px; line-height: inherit; }
+
+hr { height: 0px; color: inherit; border-top-width: 1px; }
+
+abbr:where([title]) { text-decoration: underline dotted; }
+
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+
+a { color: inherit; text-decoration: inherit; }
+
+b, strong { font-weight: bolder; }
+
+code, kbd, pre, samp { font-family: ui-monospace, SFMono-Regular, Menlo, Mo=
+naco, Consolas, "Liberation Mono", "Courier New", monospace; font-feature-s=
+ettings: normal; font-variation-settings: normal; font-size: 1em; }
+
+small { font-size: 80%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-ali=
+gn: baseline; }
+
+sub { bottom: -0.25em; }
+
+sup { top: -0.5em; }
+
+table { text-indent: 0px; border-color: inherit; border-collapse: collapse;=
+ }
+
+button, input, optgroup, select, textarea { font-family: inherit; font-feat=
+ure-settings: inherit; font-variation-settings: inherit; font-size: 100%; f=
+ont-weight: inherit; line-height: inherit; letter-spacing: inherit; color: =
+inherit; margin: 0px; padding: 0px; }
+
+button, select { text-transform: none; }
+
+button, input:where([type=3D"button"]), input:where([type=3D"reset"]), inpu=
+t:where([type=3D"submit"]) { appearance: button; background-color: transpar=
+ent; background-image: none; }
+
+progress { vertical-align: baseline; }
+
+::-webkit-inner-spin-button, ::-webkit-outer-spin-button { height: auto; }
+
+[type=3D"search"] { appearance: textfield; outline-offset: -2px; }
+
+::-webkit-search-decoration { appearance: none; }
+
+::-webkit-file-upload-button { appearance: button; font: inherit; }
+
+summary { display: list-item; }
+
+blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre { margin: 0p=
+x; }
+
+fieldset { margin: 0px; padding: 0px; }
+
+legend { padding: 0px; }
+
+menu, ol, ul { list-style: none; margin: 0px; padding: 0px; }
+
+dialog { padding: 0px; }
+
+textarea { resize: vertical; }
+
+input::placeholder, textarea::placeholder { opacity: 1; color: rgb(156, 163=
+, 175); }
+
+[role=3D"button"], button { cursor: pointer; }
+
+:disabled { cursor: default; }
+
+audio, canvas, embed, iframe, img, object, svg, video { display: block; ver=
+tical-align: middle; }
+
+img, video { max-width: 100%; height: auto; }
+
+[hidden]:where(:not([hidden=3D"until-found"])) { display: none; }
+
+.container { width: 100%; }
+
+@media (min-width: 640px) {
+  .container { max-width: 640px; }
+}
+
+@media (min-width: 768px) {
+  .container { max-width: 768px; }
+}
+
+@media (min-width: 1024px) {
+  .container { max-width: 1024px; }
+}
+
+@media (min-width: 1280px) {
+  .container { max-width: 1280px; }
+}
+
+@media (min-width: 1536px) {
+  .container { max-width: 1536px; }
+}
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+
+.mb-12 { margin-bottom: 3rem; }
+
+.mb-2 { margin-bottom: 0.5rem; }
+
+.mb-6 { margin-bottom: 1.5rem; }
+
+.mt-12 { margin-top: 3rem; }
+
+.mt-3 { margin-top: 0.75rem; }
+
+.mt-6 { margin-top: 1.5rem; }
+
+.mt-8 { margin-top: 2rem; }
+
+.block { display: block; }
+
+.flex { display: flex; }
+
+.grid { display: grid; }
+
+.hidden { display: none; }
+
+.min-h-screen { min-height: 100vh; }
+
+.w-full { width: 100%; }
+
+.max-w-4xl { max-width: 56rem; }
+
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0px, 1fr)); }
+
+.items-center { align-items: center; }
+
+.justify-center { justify-content: center; }
+
+.gap-6 { gap: 1.5rem; }
+
+.space-y-6 > :not([hidden]) ~ :not([hidden]) { --tw-space-y-reverse: 0; mar=
+gin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse))); margin-bottom:=
+ calc(1.5rem * var(--tw-space-y-reverse)); }
+
+.space-y-8 > :not([hidden]) ~ :not([hidden]) { --tw-space-y-reverse: 0; mar=
+gin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse))); margin-bottom: c=
+alc(2rem * var(--tw-space-y-reverse)); }
+
+.overflow-hidden { overflow: hidden; }
+
+.rounded { border-radius: 0.25rem; }
+
+.rounded-lg { border-radius: 0.5rem; }
+
+.rounded-xl { border-radius: 0.75rem; }
+
+.border { border-width: 1px; }
+
+.border-l-4 { border-left-width: 4px; }
+
+.border-gray-300 { --tw-border-opacity: 1; border-color: rgb(209 213 219 / =
+var(--tw-border-opacity, 1)); }
+
+.border-red-500 { --tw-border-opacity: 1; border-color: rgb(239 68 68 / var=
+(--tw-border-opacity, 1)); }
+
+.bg-blue-100 { --tw-bg-opacity: 1; background-color: rgb(219 234 254 / var(=
+--tw-bg-opacity, 1)); }
+
+.bg-blue-600 { --tw-bg-opacity: 1; background-color: rgb(37 99 235 / var(--=
+tw-bg-opacity, 1)); }
+
+.bg-red-100 { --tw-bg-opacity: 1; background-color: rgb(254 226 226 / var(-=
+-tw-bg-opacity, 1)); }
+
+.bg-white { --tw-bg-opacity: 1; background-color: rgb(255 255 255 / var(--t=
+w-bg-opacity, 1)); }
+
+.bg-gradient-to-br { background-image: linear-gradient(to bottom right, var=
+(--tw-gradient-stops)); }
+
+.from-blue-50 { --tw-gradient-from: #eff6ff var(--tw-gradient-from-position=
+); --tw-gradient-to: rgb(239 246 255 / 0) var(--tw-gradient-to-position); -=
+-tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+
+.to-indigo-100 { --tw-gradient-to: #e0e7ff var(--tw-gradient-to-position); =
+}
+
+.p-4 { padding: 1rem; }
+
+.p-8 { padding: 2rem; }
+
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+.py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+
+.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+
+.text-center { text-align: center; }
+
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+
+.font-bold { font-weight: 700; }
+
+.font-medium { font-weight: 500; }
+
+.font-semibold { font-weight: 600; }
+
+.italic { font-style: italic; }
+
+.text-blue-700 { --tw-text-opacity: 1; color: rgb(29 78 216 / var(--tw-text=
+-opacity, 1)); }
+
+.text-gray-600 { --tw-text-opacity: 1; color: rgb(75 85 99 / var(--tw-text-=
+opacity, 1)); }
+
+.text-gray-700 { --tw-text-opacity: 1; color: rgb(55 65 81 / var(--tw-text-=
+opacity, 1)); }
+
+.text-gray-800 { --tw-text-opacity: 1; color: rgb(31 41 55 / var(--tw-text-=
+opacity, 1)); }
+
+.text-red-700 { --tw-text-opacity: 1; color: rgb(185 28 28 / var(--tw-text-=
+opacity, 1)); }
+
+.text-white { --tw-text-opacity: 1; color: rgb(255 255 255 / var(--tw-text-=
+opacity, 1)); }
+
+.shadow-lg { --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px=
+ rgb(0 0 0 / 0.1); --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-co=
+lor), 0 4px 6px -4px var(--tw-shadow-color); box-shadow: var(--tw-ring-offs=
+et-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); =
+}
+
+.transition { transition-property: color, background-color, border-color, t=
+ext-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,=
+ backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter; t=
+ransition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duratio=
+n: 150ms; }
+
+.duration-300 { transition-duration: 300ms; }
+
+.hover\:bg-blue-200:hover { --tw-bg-opacity: 1; background-color: rgb(191 2=
+19 254 / var(--tw-bg-opacity, 1)); }
+
+.hover\:bg-blue-700:hover { --tw-bg-opacity: 1; background-color: rgb(29 78=
+ 216 / var(--tw-bg-opacity, 1)); }
+
+.focus\:border-blue-500:focus { --tw-border-opacity: 1; border-color: rgb(5=
+9 130 246 / var(--tw-border-opacity, 1)); }
+
+.focus\:ring-2:focus { --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 =
+var(--tw-ring-offset-width) var(--tw-ring-offset-color); --tw-ring-shadow: =
+var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw=
+-ring-color); box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shado=
+w), var(--tw-shadow, 0 0 #0000); }
+
+.focus\:ring-blue-500:focus { --tw-ring-opacity: 1; --tw-ring-color: rgb(59=
+ 130 246 / var(--tw-ring-opacity, 1)); }
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0px, 1fr)); }
+}
+------MultipartBoundary--6FPYxNDyaNzqCGYYJS4SXSCreUIjb7ub95rmmGOTm4----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-ff9a9dde-2b8b-45ca-bc42-b118ce504604@mhtml.blink
+
+@charset "utf-8";
+
+.loader { border-width: 4px; border-style: solid; border-color: rgb(59, 130=
+, 246) rgb(243, 243, 243) rgb(243, 243, 243); border-image: initial; border=
+-radius: 50%; width: 30px; height: 30px; animation: 1s linear 0s infinite n=
+ormal none running spin; margin: 0px auto; }
+
+@keyframes spin {=20
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.marketing-card { transition: 0.3s; }
+
+.marketing-card:hover { transform: translateY(-5px); box-shadow: rgba(0, 0,=
+ 0, 0.1) 0px 10px 25px; }
+------MultipartBoundary--6FPYxNDyaNzqCGYYJS4SXSCreUIjb7ub95rmmGOTm4------

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost:5000/education -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Education Content Generator</title>
+    <script src="./AI Education Content Generator_files/saved_resource"></script>
+    <style>
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .education-card {
+            transition: all 0.3s ease;
+        }
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .output-tab {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .output-tab.active {
+            border-bottom: 3px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:0.5rem}.mb-6{margin-bottom:1.5rem}.ml-2{margin-left:0.5rem}.mr-4{margin-right:1rem}.mt-12{margin-top:3rem}.mt-3{margin-top:0.75rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mb-4{margin-bottom:1rem}.mr-2{margin-right:0.5rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-4{height:1rem}.min-h-screen{min-height:100vh}.w-4{width:1rem}.w-full{width:100%}.max-w-4xl{max-width:56rem}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded{border-radius:0.25rem}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-red-500{--tw-border-opacity:1;border-color:rgb(239 68 68 / var(--tw-border-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-blue-50{--tw-gradient-from:#eff6ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(239 246 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-indigo-100{--tw-gradient-to:#e0e7ff var(--tw-gradient-to-position)}.p-4{padding:1rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-2{padding-bottom:0.5rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.italic{font-style:italic}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-red-700{--tw-text-opacity:1;color:rgb(185 28 28 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:bg-blue-200:hover{--tw-bg-opacity:1;background-color:rgb(191 219 254 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.focus\:border-blue-500:focus{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-blue-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(59 130 246 / var(--tw-ring-opacity, 1))}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen" data-new-gr-c-s-check-loaded="14.1237.0" data-gr-ext-installed="">
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">AI Education Content Generator</h1>
+                <p class="text-lg text-gray-600">Create customized learning materials in seconds</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden education-card">
+                <div class="p-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Learning Details</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="Science">Science</option>
+                                    <option value="Mathematics">Mathematics</option>
+                                    <option value="History">History</option>
+                                    <option value="Literature">Literature</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="level" class="block text-sm font-medium text-gray-700 mb-1">Level</label>
+                                <select id="level" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Advanced">Advanced</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="topic" class="block text-sm font-medium text-gray-700 mb-1">Topic</label>
+                            <input type="text" id="topic" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter the topic you want to learn about (e.g., Photosynthesis)">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Output Types</label>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="summary" name="output_types" value="summary" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" checked="">
+                                    <label for="summary" class="ml-2 block text-sm text-gray-700">Concept Summary</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="quiz" name="output_types" value="quiz" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" checked="">
+                                    <label for="quiz" class="ml-2 block text-sm text-gray-700">Quiz Questions</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="examples" name="output_types" value="examples" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" checked="">
+                                    <label for="examples" class="ml-2 block text-sm text-gray-700">Real-life Examples</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="analogies" name="output_types" value="analogies" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                    <label for="analogies" class="ml-2 block text-sm text-gray-700">Key Analogies</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="tips" name="output_types" value="tips" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                    <label for="tips" class="ml-2 block text-sm text-gray-700">Study Tips</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="generate-btn" class="w-full mt-8 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
+                        Generate Learning Materials
+                    </button>
+                </div>
+            </div>
+
+            <div id="loading" class="mt-8 text-center hidden">
+                <div class="loader"></div>
+                <p class="mt-3 text-gray-600">Generating your learning materials...</p>
+            </div>
+
+            <div id="error" class="hidden mt-6 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded"></div>
+
+            <div id="results" class="mt-12 space-y-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden education-card">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Generated Content</h2>
+                        
+                        <div class="flex border-b mb-6">
+                            <div id="tab-summary" class="output-tab active mr-4 pb-2" data-tab="summary">Summary</div>
+                            <div id="tab-quiz" class="output-tab mr-4 pb-2" data-tab="quiz">Quiz</div>
+                            <div id="tab-examples" class="output-tab mr-4 pb-2" data-tab="examples">Examples</div>
+                            <div id="tab-analogies" class="output-tab mr-4 pb-2" data-tab="analogies">Analogies</div>
+                            <div id="tab-tips" class="output-tab pb-2" data-tab="tips">Study Tips</div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div id="content-summary" class="tab-content">
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Concept Summary</h3>
+                                <p id="summary-content" class="text-gray-600">**
+Python if-else statements are an essential part of any programming language. They allow you to control the flow of your program based on specific conditions. In Python, an if statement is used to check a condition, and if it's true, the code inside the if block will be executed. An else statement can also be added to run some extra code if the condition is false.</p>
+                            </div>
+                            
+                            <div id="content-quiz" class="tab-content hidden">
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Quiz Questions</h3>
+                                <div id="quiz-content" class="text-gray-600 space-y-4"><div class="mb-4">**<br>Q1. What is an if-else statement in Python?<br>a) A way to ask a question and get an answer<br>b) A way to control the flow of your program based on specific conditions<br>c) A type of loop that repeats a block of code<br>d) None of the above<br>(Correct answer: b)<br>Q2. What is the purpose of the else statement in Python?<br>a) To run some extra code if the condition is true<br>b) To repeat a block of code until a certain condition is met<br>c) To ask for input from the user<br>d) None of the above<br>(Correct answer: a)<br>Q3. What is the difference between an if statement and an else statement in Python?<br>a) An if statement checks a condition before running some code, while an else statement runs some extra code after the if block has finished.<br>b) An if statement always runs some code, regardless of the condition.<br>c) An else statement can only be used inside an if statement.<br>d) None of the above<br>(Correct answer: a)</div></div>
+                            </div>
+                            
+                            <div id="content-examples" class="tab-content hidden">
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Real-life Examples</h3>
+                                <div id="examples-content" class="text-gray-600 space-y-3"><div class="mb-2">**</div><div class="mb-2">Example 1: You are creating a simple calculator program that calculates the area of a circle. You use an if-else statement to check if the user enters a valid value for the radius, and if so, calculate the area. If the user enters an invalid value, you can display an error message using the else statement.</div><div class="mb-2">Example 2: You are creating a simple game where the user has to guess a number between 1 and 10. You use an if-else statement to check if the user's guess is correct, and if it's not, display an error message. If the user's guess is correct, you can display a success message using the else statement.</div></div>
+                            </div>
+                            
+                            <div id="content-analogies" class="tab-content hidden">
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Key Analogies</h3>
+                                <div id="analogies-content" class="text-gray-600 space-y-3"><div class="mb-2 italic">**</div><div class="mb-2 italic">An if-else statement is like a traffic light. If the condition is true, the code inside the if block will run, just like a car goes through the green light. If the condition is false, the code inside the else block will run, just like a car goes through the red light.</div></div>
+                            </div>
+                            
+                            <div id="content-tips" class="tab-content hidden">
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Study Tips</h3>
+                                <div id="tips-content" class="text-gray-600 space-y-2"><div class="mb-1 flex items-start"><span class="mr-2">•</span>**</div><div class="mb-1 flex items-start"><span class="mr-2">•</span>1. Break down complex conditions into smaller, more manageable parts to make it easier to understand and check each part individually.</div><div class="mb-1 flex items-start"><span class="mr-2">•</span>2. Use visual aids such as diagrams or flowcharts to help you understand the condition and the code inside the if and else blocks.</div><div class="mb-1 flex items-start"><span class="mr-2">•</span>3. Practice writing your own if-else statements using real-world examples to reinforce your understanding of how they work.</div></div>
+                            </div>
+                        </div>
+                        
+                        <button id="regenerate-btn" class="mt-8 bg-blue-100 hover:bg-blue-200 text-blue-700 font-medium py-2 px-6 rounded-lg transition duration-300">
+                            Regenerate Content
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('generate-btn').addEventListener('click', generateContent);
+        document.getElementById('regenerate-btn').addEventListener('click', generateContent);
+        
+        // Tab switching functionality
+        document.querySelectorAll('.output-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.output-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Hide all content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show selected content
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(`content-${tabId}`).classList.remove('hidden');
+            });
+        });
+
+        async function generateContent() {
+            // Get form values
+            const outputTypes = [];
+            document.querySelectorAll('input[name="output_types"]:checked').forEach(checkbox => {
+                outputTypes.push(checkbox.value);
+            });
+            
+            const formData = {
+                subject: document.getElementById('subject').value,
+                topic: document.getElementById('topic').value,
+                level: document.getElementById('level').value,
+                output_types: outputTypes.join(', ')
+            };
+
+            // Validate
+            if (!formData.topic.trim()) {
+                showError('Please enter a topic');
+                return;
+            }
+            if (outputTypes.length === 0) {
+                showError('Please select at least one output type');
+                return;
+            }
+
+            // UI States
+            document.getElementById('error').classList.add('hidden');
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('loading').classList.remove('hidden');
+            document.getElementById('generate-btn').disabled = true;
+
+            try {
+                const response = await fetch('/generate-education', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Request failed');
+                }
+
+                const data = await response.json();
+                
+                // Check for parsing errors in the response
+                const requiredKeys = ['Concept Summary', 'Quiz Questions', 'Real-life Examples', 'Key Analogies', 'Study Tips'];
+                if (!requiredKeys.every(key => key in data) || requiredKeys.some(key => data[key].startsWith("Section '"))) {
+                    console.error('Malformed response:', data);
+                    throw new Error('Received incomplete or invalid content from server');
+                }
+
+                displayResults(data);
+            } catch (error) {
+                showError(error.message || 'Failed to generate content');
+                console.error('Error:', error);
+            } finally {
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('generate-btn').disabled = false;
+            }
+        }
+
+        function displayResults(data) {
+            // Update DOM elements with the generated content
+            document.getElementById('summary-content').textContent = data['Concept Summary'] || 'No summary generated';
+            
+            // Format quiz questions
+            const quizContent = document.getElementById('quiz-content');
+            quizContent.innerHTML = '';
+            if (data['Quiz Questions']) {
+                const questions = data['Quiz Questions'].split('\n\n');
+                questions.forEach(q => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'mb-4';
+                    questionDiv.innerHTML = q.replace(/\n/g, '<br>');
+                    quizContent.appendChild(questionDiv);
+                });
+            }
+            
+            // Format examples
+            const examplesContent = document.getElementById('examples-content');
+            examplesContent.innerHTML = '';
+            if (data['Real-life Examples']) {
+                const examples = data['Real-life Examples'].split('\n').filter(e => e.trim());
+                examples.forEach(e => {
+                    const exampleDiv = document.createElement('div');
+                    exampleDiv.className = 'mb-2';
+                    exampleDiv.textContent = e;
+                    examplesContent.appendChild(exampleDiv);
+                });
+            }
+            
+            // Format analogies
+            const analogiesContent = document.getElementById('analogies-content');
+            analogiesContent.innerHTML = '';
+            if (data['Key Analogies']) {
+                const analogies = data['Key Analogies'].split('\n').filter(a => a.trim());
+                analogies.forEach(a => {
+                    const analogyDiv = document.createElement('div');
+                    analogyDiv.className = 'mb-2 italic';
+                    analogyDiv.textContent = a;
+                    analogiesContent.appendChild(analogyDiv);
+                });
+            }
+            
+            // Format study tips
+            const tipsContent = document.getElementById('tips-content');
+            tipsContent.innerHTML = '';
+            if (data['Study Tips']) {
+                const tips = data['Study Tips'].split('\n').filter(t => t.trim());
+                tips.forEach(t => {
+                    const tipDiv = document.createElement('div');
+                    tipDiv.className = 'mb-1 flex items-start';
+                    tipDiv.innerHTML = '<span class="mr-2">•</span>' + t;
+                    tipsContent.appendChild(tipDiv);
+                });
+            }
+            
+            document.getElementById('results').classList.remove('hidden');
+            
+            // Smooth scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.classList.remove('hidden');
+            errorDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Social Media Content Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .social-card {
+            transition: all 0.3s ease;
+        }
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .dropzone {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .dropzone:hover {
+            border-color: #3b82f6;
+            background-color: #f8fafc;
+        }
+        .dropzone.active {
+            border-color: #3b82f6;
+            background-color: #f0f7ff;
+        }
+        .hashtag {
+            display: inline-block;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            padding: 4px 8px;
+            background-color: #e0f2fe;
+            border-radius: 4px;
+            color: #0369a1;
+            cursor: pointer;
+        }
+        .hashtag:hover {
+            background-color: #bae6fd;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">AI Social Media Content Generator</h1>
+                <p class="text-lg text-gray-600">Create engaging posts tailored to your platform and audience</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden social-card">
+                <div class="p-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Post Details</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="platform" class="block text-sm font-medium text-gray-700 mb-1">Platform</label>
+                                <select id="platform" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="Instagram">Instagram</option>
+                                    <option value="Twitter">Twitter</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="LinkedIn">LinkedIn</option>
+                                    <option value="TikTok">TikTok</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="tone" class="block text-sm font-medium text-gray-700 mb-1">Tone</label>
+                                <select id="tone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="Professional">Professional</option>
+                                    <option value="Casual">Casual</option>
+                                    <option value="Witty">Witty</option>
+                                    <option value="Inspirational">Inspirational</option>
+                                    <option value="Educational">Educational</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="post_context" class="block text-sm font-medium text-gray-700 mb-1">Post Context</label>
+                            <textarea id="post_context" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Describe what your post is about (e.g., 'Announcing our new product launch')"></textarea>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="keywords" class="block text-sm font-medium text-gray-700 mb-1">Keywords (optional)</label>
+                                <input type="text" id="keywords" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., sustainable, eco-friendly, handmade">
+                            </div>
+                            <div>
+                                <label for="target_audience" class="block text-sm font-medium text-gray-700 mb-1">Target Audience (optional)</label>
+                                <input type="text" id="target_audience" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., young professionals, parents">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Upload Image (optional)</label>
+                            <div id="dropzone" class="dropzone">
+                                <div id="dropzone-content">
+                                    <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                    </svg>
+                                    <p class="mt-1 text-sm text-gray-600">Drag & drop an image here, or click to select</p>
+                                    <p class="mt-1 text-xs text-gray-500">PNG, JPG, GIF up to 5MB</p>
+                                </div>
+                                <input type="file" id="image-upload" class="hidden" accept="image/*">
+                                <div id="image-preview" class="hidden mt-4">
+                                    <img id="preview-image" src="#" alt="Preview" class="max-h-48 mx-auto rounded-lg">
+                                    <button id="remove-image" class="mt-2 text-sm text-red-600 hover:text-red-800">Remove image</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="generate-btn" class="w-full mt-8 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
+                        Generate Social Media Content
+                    </button>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden mt-8 text-center">
+                <div class="loader"></div>
+                <p class="mt-3 text-gray-600">Generating your social media content...</p>
+            </div>
+
+            <div id="error" class="hidden mt-6 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded"></div>
+
+            <div id="results" class="hidden mt-12 space-y-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden social-card">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Generated Content</h2>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Caption</h3>
+                                <div id="caption-content" class="text-gray-600 bg-gray-50 p-4 rounded-lg"></div>
+                                <button id="copy-caption" class="mt-2 text-sm text-blue-600 hover:text-blue-800">Copy to clipboard</button>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Post Ideas</h3>
+                                <div id="ideas-content" class="text-gray-600 space-y-3"></div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Hashtags</h3>
+                                <div id="hashtags-content" class="flex flex-wrap"></div>
+                                <button id="copy-hashtags" class="mt-2 text-sm text-blue-600 hover:text-blue-800">Copy all hashtags</button>
+                            </div>
+                        </div>
+                        
+                        <button id="regenerate-btn" class="mt-8 bg-blue-100 hover:bg-blue-200 text-blue-700 font-medium py-2 px-6 rounded-lg transition duration-300">
+                            Regenerate Content
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM elements
+            const generateBtn = document.getElementById('generate-btn');
+            const regenerateBtn = document.getElementById('regenerate-btn');
+            const copyCaptionBtn = document.getElementById('copy-caption');
+            const copyHashtagsBtn = document.getElementById('copy-hashtags');
+            const dropzone = document.getElementById('dropzone');
+            const imageUpload = document.getElementById('image-upload');
+            const previewImage = document.getElementById('preview-image');
+            const removeImageBtn = document.getElementById('remove-image');
+            
+            // Image upload handling
+            dropzone.addEventListener('click', () => imageUpload.click());
+            
+            dropzone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropzone.classList.add('active');
+            });
+            
+            dropzone.addEventListener('dragleave', () => {
+                dropzone.classList.remove('active');
+            });
+            
+            dropzone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropzone.classList.remove('active');
+                if (e.dataTransfer.files.length) {
+                    imageUpload.files = e.dataTransfer.files;
+                    handleImageUpload();
+                }
+            });
+            
+            imageUpload.addEventListener('change', handleImageUpload);
+            
+            removeImageBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                imageUpload.value = '';
+                document.getElementById('image-preview').classList.add('hidden');
+                document.getElementById('dropzone-content').classList.remove('hidden');
+            });
+            
+            function handleImageUpload() {
+                const file = imageUpload.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        previewImage.src = e.target.result;
+                        document.getElementById('image-preview').classList.remove('hidden');
+                        document.getElementById('dropzone-content').classList.add('hidden');
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+            
+            // Generate content function
+            async function generateContent() {
+                // Get form values
+                const platform = document.getElementById('platform').value;
+                const tone = document.getElementById('tone').value;
+                const postContext = document.getElementById('post_context').value;
+                const keywords = document.getElementById('keywords').value;
+                const targetAudience = document.getElementById('target_audience').value;
+                
+                // Validate required fields
+                if (!postContext) {
+                    showError('Please provide post context');
+                    return;
+                }
+                
+                // Prepare data
+                const data = {
+                    platform,
+                    tone,
+                    post_context: postContext,
+                    keywords,
+                    target_audience: targetAudience
+                };
+                
+                // Add image if uploaded
+                const file = imageUpload.files[0];
+                if (file) {
+                    const imageBase64 = await getBase64(file);
+                    data.image_base64 = imageBase64;
+                }
+                
+                // Show loading, hide results and error
+                document.getElementById('loading').classList.remove('hidden');
+                document.getElementById('results').classList.add('hidden');
+                document.getElementById('error').classList.add('hidden');
+                
+                try {
+                    // Send request to backend
+                    const response = await fetch('/generate-social-media', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok) {
+                        // Display results
+                        document.getElementById('caption-content').textContent = result.Caption || result.caption || 'No caption generated';
+                        document.getElementById('ideas-content').innerHTML = formatIdeas(result['Post Ideas'] || result.post_ideas || 'No ideas generated');
+                        document.getElementById('hashtags-content').innerHTML = formatHashtags(result.Hashtags || result.hashtags || '');
+                        
+                        document.getElementById('results').classList.remove('hidden');
+                    } else {
+                        showError(result.error || 'Failed to generate content');
+                    }
+                } catch (error) {
+                    showError('An error occurred while generating content: ' + error.message);
+                } finally {
+                    document.getElementById('loading').classList.add('hidden');
+                }
+            }
+            
+            // Helper functions
+            function getBase64(file) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = () => resolve(reader.result);
+                    reader.onerror = error => reject(error);
+                });
+            }
+            
+            function formatIdeas(ideas) {
+                if (typeof ideas === 'string') {
+                    // Convert bullet points to HTML
+                    return ideas.replace(/\n/g, '<br>');
+                }
+                return ideas;
+            }
+            
+            function formatHashtags(hashtags) {
+                if (typeof hashtags === 'string') {
+                    return hashtags.split(' ')
+                        .filter(tag => tag.trim())
+                        .map(tag => `<span class="hashtag">${tag}</span>`)
+                        .join('');
+                }
+                return '';
+            }
+            
+            function showError(message) {
+                const errorDiv = document.getElementById('error');
+                errorDiv.textContent = message;
+                errorDiv.classList.remove('hidden');
+            }
+            
+            function copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('Copied to clipboard!');
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            }
+            
+            // Event listeners
+            generateBtn.addEventListener('click', generateContent);
+            regenerateBtn.addEventListener('click', generateContent);
+            
+            copyCaptionBtn.addEventListener('click', () => {
+                const caption = document.getElementById('caption-content').textContent;
+                copyToClipboard(caption);
+            });
+            
+            copyHashtagsBtn.addEventListener('click', () => {
+                const hashtags = Array.from(document.querySelectorAll('.hashtag'))
+                    .map(el => el.textContent)
+                    .join(' ');
+                copyToClipboard(hashtags);
+            });
+        });
+    </script>
+</body>
+</html>

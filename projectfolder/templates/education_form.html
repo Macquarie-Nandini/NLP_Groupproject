@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Education Content Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .education-card {
+            transition: all 0.3s ease;
+        }
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .output-tab {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .output-tab.active {
+            border-bottom: 3px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">AI Education Content Generator</h1>
+                <p class="text-lg text-gray-600">Create customized learning materials in seconds</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden education-card">
+                <div class="p-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Learning Details</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="Science">Science</option>
+                                    <option value="Mathematics">Mathematics</option>
+                                    <option value="History">History</option>
+                                    <option value="Literature">Literature</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="level" class="block text-sm font-medium text-gray-700 mb-1">Level</label>
+                                <select id="level" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Advanced">Advanced</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="topic" class="block text-sm font-medium text-gray-700 mb-1">Topic</label>
+                            <input type="text" id="topic" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter the topic you want to learn about (e.g., Photosynthesis)">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Output Types</label>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="summary" name="output_types" value="summary" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" checked>
+                                    <label for="summary" class="ml-2 block text-sm text-gray-700">Concept Summary</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="quiz" name="output_types" value="quiz" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" checked>
+                                    <label for="quiz" class="ml-2 block text-sm text-gray-700">Quiz Questions</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="examples" name="output_types" value="examples" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" checked>
+                                    <label for="examples" class="ml-2 block text-sm text-gray-700">Real-life Examples</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="analogies" name="output_types" value="analogies" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                    <label for="analogies" class="ml-2 block text-sm text-gray-700">Key Analogies</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="tips" name="output_types" value="tips" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                    <label for="tips" class="ml-2 block text-sm text-gray-700">Study Tips</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="generate-btn" class="w-full mt-8 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
+                        Generate Learning Materials
+                    </button>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden mt-8 text-center">
+                <div class="loader"></div>
+                <p class="mt-3 text-gray-600">Generating your learning materials...</p>
+            </div>
+
+            <div id="error" class="hidden mt-6 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded"></div>
+
+            <div id="results" class="hidden mt-12 space-y-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden education-card">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Generated Content</h2>
+                        
+                        <div class="flex border-b mb-6">
+                            <div id="tab-summary" class="output-tab active mr-4 pb-2" data-tab="summary">Summary</div>
+                            <div id="tab-quiz" class="output-tab mr-4 pb-2" data-tab="quiz">Quiz</div>
+                            <div id="tab-examples" class="output-tab mr-4 pb-2" data-tab="examples">Examples</div>
+                            <div id="tab-analogies" class="output-tab mr-4 pb-2" data-tab="analogies">Analogies</div>
+                            <div id="tab-tips" class="output-tab pb-2" data-tab="tips">Study Tips</div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div id="content-summary" class="tab-content">
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Concept Summary</h3>
+                                <p id="summary-content" class="text-gray-600"></p>
+                            </div>
+                            
+                            <div id="content-quiz" class="tab-content hidden">
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Quiz Questions</h3>
+                                <div id="quiz-content" class="text-gray-600 space-y-4"></div>
+                            </div>
+                            
+                            <div id="content-examples" class="tab-content hidden">
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Real-life Examples</h3>
+                                <div id="examples-content" class="text-gray-600 space-y-3"></div>
+                            </div>
+                            
+                            <div id="content-analogies" class="tab-content hidden">
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Key Analogies</h3>
+                                <div id="analogies-content" class="text-gray-600 space-y-3"></div>
+                            </div>
+                            
+                            <div id="content-tips" class="tab-content hidden">
+                                <h3 class="text-lg font-medium text-gray-700 mb-2">Study Tips</h3>
+                                <div id="tips-content" class="text-gray-600 space-y-2"></div>
+                            </div>
+                        </div>
+                        
+                        <button id="regenerate-btn" class="mt-8 bg-blue-100 hover:bg-blue-200 text-blue-700 font-medium py-2 px-6 rounded-lg transition duration-300">
+                            Regenerate Content
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('generate-btn').addEventListener('click', generateContent);
+        document.getElementById('regenerate-btn').addEventListener('click', generateContent);
+        
+        // Tab switching functionality
+        document.querySelectorAll('.output-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.output-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Hide all content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show selected content
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(`content-${tabId}`).classList.remove('hidden');
+            });
+        });
+
+        async function generateContent() {
+            // Get form values
+            const outputTypes = [];
+            document.querySelectorAll('input[name="output_types"]:checked').forEach(checkbox => {
+                outputTypes.push(checkbox.value);
+            });
+            
+            const formData = {
+                subject: document.getElementById('subject').value,
+                topic: document.getElementById('topic').value,
+                level: document.getElementById('level').value,
+                output_types: outputTypes.join(', ')
+            };
+
+            // Validate
+            if (!formData.topic.trim()) {
+                showError('Please enter a topic');
+                return;
+            }
+            if (outputTypes.length === 0) {
+                showError('Please select at least one output type');
+                return;
+            }
+
+            // UI States
+            document.getElementById('error').classList.add('hidden');
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('loading').classList.remove('hidden');
+            document.getElementById('generate-btn').disabled = true;
+
+            try {
+                const response = await fetch('/generate-education', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Request failed');
+                }
+
+                const data = await response.json();
+                
+                // Check for parsing errors in the response
+                const requiredKeys = ['Concept Summary', 'Quiz Questions', 'Real-life Examples', 'Key Analogies', 'Study Tips'];
+                if (!requiredKeys.every(key => key in data) || requiredKeys.some(key => data[key].startsWith("Section '"))) {
+                    console.error('Malformed response:', data);
+                    throw new Error('Received incomplete or invalid content from server');
+                }
+
+                displayResults(data);
+            } catch (error) {
+                showError(error.message || 'Failed to generate content');
+                console.error('Error:', error);
+            } finally {
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('generate-btn').disabled = false;
+            }
+        }
+
+        function displayResults(data) {
+            // Update DOM elements with the generated content
+            document.getElementById('summary-content').textContent = data['Concept Summary'] || 'No summary generated';
+            
+            // Format quiz questions
+            const quizContent = document.getElementById('quiz-content');
+            quizContent.innerHTML = '';
+            if (data['Quiz Questions']) {
+                const questions = data['Quiz Questions'].split('\n\n');
+                questions.forEach(q => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'mb-4';
+                    questionDiv.innerHTML = q.replace(/\n/g, '<br>');
+                    quizContent.appendChild(questionDiv);
+                });
+            }
+            
+            // Format examples
+            const examplesContent = document.getElementById('examples-content');
+            examplesContent.innerHTML = '';
+            if (data['Real-life Examples']) {
+                const examples = data['Real-life Examples'].split('\n').filter(e => e.trim());
+                examples.forEach(e => {
+                    const exampleDiv = document.createElement('div');
+                    exampleDiv.className = 'mb-2';
+                    exampleDiv.textContent = e;
+                    examplesContent.appendChild(exampleDiv);
+                });
+            }
+            
+            // Format analogies
+            const analogiesContent = document.getElementById('analogies-content');
+            analogiesContent.innerHTML = '';
+            if (data['Key Analogies']) {
+                const analogies = data['Key Analogies'].split('\n').filter(a => a.trim());
+                analogies.forEach(a => {
+                    const analogyDiv = document.createElement('div');
+                    analogyDiv.className = 'mb-2 italic';
+                    analogyDiv.textContent = a;
+                    analogiesContent.appendChild(analogyDiv);
+                });
+            }
+            
+            // Format study tips
+            const tipsContent = document.getElementById('tips-content');
+            tipsContent.innerHTML = '';
+            if (data['Study Tips']) {
+                const tips = data['Study Tips'].split('\n').filter(t => t.trim());
+                tips.forEach(t => {
+                    const tipDiv = document.createElement('div');
+                    tipDiv.className = 'mb-1 flex items-start';
+                    tipDiv.innerHTML = '<span class="mr-2">•</span>' + t;
+                    tipsContent.appendChild(tipDiv);
+                });
+            }
+            
+            document.getElementById('results').classList.remove('hidden');
+            
+            // Smooth scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.classList.remove('hidden');
+            errorDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

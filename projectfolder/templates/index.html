@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NLP Services</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.5.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2025.5.1/core.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">N<span>L</span><span>P</span></a>
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+                    <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+                    <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
+                    <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+                    <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li>
+                    <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home-section" class="hero">
+        <div class="home-slider owl-carousel">
+            <div class="slider-item">
+                <div class="overlay"></div>
+                <div class="container-fluid px-md-0">
+                    <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+                        <div class="one-third order-md-last img" style="background-image:url({{ url_for('static', filename='images/LV68main.jpg') }});">
+                            <div class="overlay"></div>
+                            <div class="overlay-1"></div>
+                        </div>
+                        <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                            <div class="text">
+                                <span class="subheading">Hello!</span>
+                                <h1 class="mb-4 mt-3">Creative<span>AI</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-item">
+                <div class="overlay"></div>
+                <div class="container-fluid px-md-0">
+                    <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+                        <div class="one-third order-md-last img" style="background-image:url({{ url_for('static', filename='images/360_F_609793841_kkRzZAQlCePbdYMH0jgXcVtA4pmBXXli.jpg') }});">
+                            <div class="overlay"></div>
+                            <div class="overlay-1"></div>
+                        </div>
+                        <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                            <div class="text">
+                                <span class="subheading">Hello!</span>
+                                <h1 class="mb-4 mt-3">Hi,<span>AI</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section" id="services-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+                    <span class="subheading">I am great at</span>
+                    <h2 class="mb-4">AI-Powered Content Generation Services</h2>
+                    <p>We provide cutting-edge AI solutions for your business and educational needs</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="media block-6 services d-block bg-white rounded-lg shadow ftco-animate">
+                        <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-3d-design"></span></div>
+                        <div class="media-body">
+                            <h3 class="heading mb-3" style="color:black;">
+                                <a href="{{ url_for('marketing_form') }}">Marketing Content</a>
+                            </h3>
+                            <p>Generate professional marketing materials including company descriptions, taglines, and marketing copy.</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="media block-6 services d-block bg-white rounded-lg shadow ftco-animate">
+                        <div class="icon shadow d-flex align-items-center justify-content-center"><span class="flaticon-app-development"></span></div>
+                        <div class="media-body">
+                            <h3 class="heading mb-3"><a href="{{ url_for('education_form') }}">Education Content</a></h3>
+                            <p>Create customized learning materials including summaries, quizzes, and examples for any subject.</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="media block-6 services d-block bg-white rounded-lg shadow ftco-animate">
+                        <div class="icon shadow d-flex align-items-center justify-content-center"><span class="flaticon-web-programming"></span></div>
+                        <div class="media-body">
+                            <h3 class="heading mb-3"><a href="{{ url_for('social_media_form') }}">Social Media Content</a></h3>
+                            <p>Generate engaging posts, creative captions, trending hashtags tailored to your preferred platform, target audience, campaign goals.</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rest of your sections (about, contact, etc.) -->
+
+    <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <!-- Footer content -->
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-migrate-3.0.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.animateNumber.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scrollax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
